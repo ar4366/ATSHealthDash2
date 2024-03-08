@@ -152,7 +152,7 @@ export async function fetchData(paramters) {
     //const martices={"Patient intake":"patient_intake_count" ,"Patient out":"patient_out_count" ,"Total Patient":"total_icu_patients" ,"Average length of stay":"average_los"}
     const martices={"Patient Intake Count":"patient_intake_count" ,"Patient Out Count":"patient_out_count" ,"Total Patients in ICU":"total_icu_patients" ,"Average Length of Stay":"average_los"}
     try {
-        const apiUrl = `http://127.0.0.1:5000/daily_agg2?year=${paramters[2]}&metric=${martices[paramters[3]]}&month=${months[paramters[1]]}`;
+        const apiUrl = `http://127.0.0.1:8000/daily_agg2?year=${paramters[2]}&metric=${martices[paramters[3]]}&month=${months[paramters[1]]}`;
        
 
         const response = await fetch(apiUrl);
@@ -387,7 +387,7 @@ export async function single_prediction(paramters) {
     const shift = {"00:00:00 - 04:00:00": "00:00:00" , "04:00:00 - 08:00:00" : "04:00:00","08:00:00 - 12:00:00" : "08:00:00" ,"12:00:00 - 16:00:00" : "12:00:00" , "16:00:00 - 20:00:00" :"16:00:00 ","20:00:00 - 00:00:00" : "20:00:00"}
    
     try {
-        const apiUrl =`http://127.0.0.1:5000/prediction2/?date=${paramters[0]}-${months[paramters[1]]}-${paramters[2]} ${shift[paramters[4]]}`;
+        const apiUrl =`http://127.0.0.1:8000/prediction2/?date=${paramters[0]}-${months[paramters[1]]}-${paramters[2]} ${shift[paramters[4]]}`;
         console.log(apiUrl)
         
         

@@ -18,7 +18,7 @@ async function update_diagnose_col() {
     
   try {
     const patientID1=document.getElementById('patient-id').value;
-    const response = await fetch(`http://127.0.0.1:5000/patient/?sub_id=${patientID1}`);
+    const response = await fetch(`http://127.0.0.1:8000/patient/?sub_id=${patientID1}`);
 
     
     if (!response.ok) {
@@ -70,7 +70,7 @@ export async function update_column(x) {
   console.log(x);
   try {
    // alert(`http://127.0.0.1:5000/patient/?sub_id=${subId}`)
-    const response = await fetch(`http://127.0.0.1:5000/patient/?sub_id=${subId}`);
+    const response = await fetch(`http://127.0.0.1:8000/patient/?sub_id=${subId}`);
     
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);

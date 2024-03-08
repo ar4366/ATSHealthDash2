@@ -25,7 +25,7 @@ export async function fetchTotalPatients(parameters)
         var final_parameter= parameters[2].toString()+"-" + parameters[1] +"-"+ parameters[0].toString();
       }
         
-        const response = await fetch(`http://127.0.0.1:5000/icu_detail?shift_id=${final_parameter}&shift_time=${shift[parameters[4]]}`);
+        const response = await fetch(`http://127.0.0.1:8000/icu_detail?shift_id=${final_parameter}&shift_time=${shift[parameters[4]]}`);
     
         
         if (!response.ok) {
@@ -92,7 +92,7 @@ export async function icu_careunit(parameters){
         }
          // const patientID1=document.getElementById('patient-id').value;
          //alert(`http://127.0.0.1:5000/care_unit/?shift_date=${final_parameter}&shift_time=${shift[parameters[4]]}`)
-        const response = await fetch(`http://127.0.0.1:5000/care_unit/?shift_date=${final_parameter}&shift_time=${shift[parameters[4]]}`);
+        const response = await fetch(`http://127.0.0.1:8000/care_unit/?shift_date=${final_parameter}&shift_time=${shift[parameters[4]]}`);
     
         
         if (!response.ok) {
